@@ -1,0 +1,13 @@
+body.small img[role="presentation"] {
+  display: none;
+}
+
+body.small * {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  grid-gap: 0px 0px;
+}
+
+body.small textarea {
+  width: 100%;
+}

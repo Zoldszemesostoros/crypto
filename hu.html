@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang=hu>
+   <head>
+      <meta charset=utf-8>
+      <link rel=stylesheet href=css/importer.css>
+      <link rel="shortcut icon" href=img/lock.ico>
+      <title> Titkosítás </title>
+   </head>
+   <body>
+     <header>
+        <img src=img/lock.ico alt="Zárt lakat" role="presentation">
+        <div class="text">
+        <h1> Titkosító progam </h1>
+A titkosítandó szöveget gépelje be a "Forrás szöveg" feliratú mezőbe, majd kattintson a "Titkosítás" gombra! A "Titkosított szöveg" mezőkben két   értelmezketetlen zagyvalék fog megjelenni. Innen kimásolva ezeket elküldheti pl e-mailban. A kikódoláshoz másolja be az egyik szöveget az egyik      "Titkosított szöveg" mezőbe, a másikat a másikba, majd kattintson a "Kikódol" gombra!
+        </div>
+     </header>
+      <form role="application">
+         <span class="textareaType"> Forrás szöveg: </span> 
+		 <button id="encrypt"> <img src=img/lock.ico alt="Zárt lakat"> Titkosít </button> <br>  
+		 <textarea id=text3 autofocus></textarea> <br>
+         <span class="textareaType"> Titkosított szöveg: </span> 
+		 <button id=decode> <img src=img/openlock.jpg alt="nyitott lakat" > Kikódol </button> <br>
+		 <textarea id=text1></textarea>
+         <textarea id=text2></textarea> <wbr> 
+      </form>
+      <script src=js/jquery-3.3.1.min.js> </script>
+      <script src=js/encrypt.js> </script>
+   </body>
+</html>

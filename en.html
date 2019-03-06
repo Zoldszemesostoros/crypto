@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+   <head>
+      <meta charset=utf-8>
+      <link rel=stylesheet href=css/importer.css>
+      <link rel="shortcut icon" href=img/lock.ico>
+      <title> Encryption </title>
+   </head>
+   <body>
+	  <header>
+        <img src=img/lock.ico alt="Zárt lakat" role="presentation">
+        <div class="text">
+        <h1> Encryptor program </h1>
+             Type some text to the "source text" field, and click the "Encrypt" button. The result will appear in the "encrypted text" fields. To decode the result, copy the texts into the "encrypted text" fields, and click the "Decode" button. 
+        </div>
+      </header>
+      <form role="application">
+         <span class="textareaType"> Source text: </span> 
+		 <button id="encrypt"> <img src=img/lock.ico alt="A closed lock"> Encrypt </button> <br> 
+		 <textarea id=text3 autofocus></textarea> <br>
+         <span class="textareaType"> Encrypted text: </span> 
+		 <button id="decode"> <img src=img/openlock.jpg alt="An opened lock"> Decode </button> <br>
+		 <textarea id=text1></textarea>
+         <textarea id=text2></textarea> <wbr> 
+      </form>
+      <script src=js/jquery-3.3.1.min.js> </script>
+      <script src=js/encrypt.js> </script>
+   </body>
+</html>
