@@ -1,5 +1,5 @@
 function randombit(length) {
-    //szam valtozó hosszusagu 0-1 kombinaciókat csinal veletlenszeruen.
+    //szam valtozÃ³ hosszusagu 0-1 kombinaciÃ³kat csinal veletlenszeruen.
     //pl a randombit(3) eredmenye lehet "000" , "011" stb
 	"use strict";
 	var result = (((Math.round(Math.random() * 100000))) % 2).toString();
@@ -10,7 +10,7 @@ function randombit(length) {
 }
 
 function xor(c1, c2) {
-    // a xor (kizaró vagy) logikai muvelet
+    // a xor (kizarÃ³ vagy) logikai muvelet
     return ((c1 ^ c2).toString(16)).substr(-2);
 }
 
@@ -43,8 +43,8 @@ function addZero(str, length) {
 
 function stringToBin(str) {
     //a bemeneti stringet 1-0 karaktersorra alakitja
-    //A karaktereknek kiszamolja a kódjat, atvaltja 2-es szamrendszerbe, es egymashoz fuzi oket
-    // a addZero() gondoskodik arról, hogy mindig 8 szamjegyuek legyenek a kódok
+    //A karaktereknek kiszamolja a kÃ³djat, atvaltja 2-es szamrendszerbe, es egymashoz fuzi oket
+    // a addZero() gondoskodik arrÃ³l, hogy mindig 8 szamjegyuek legyenek a kÃ³dok
     //console.log("stringToBin eleje") 
     var result = addZero(str.charCodeAt(0).toString(2), 16);
     //console.log(eredm)
@@ -72,7 +72,7 @@ function binToString(bin) {
     } //console.log("binToString vege")
     return result;
 }
-
+/*
 function binTo64(mit) {
     //fejlesztes alatt
     var eredm = addZero(mit.charCodeAt(0).toString(2), 8);
@@ -105,9 +105,9 @@ function coord_enc(text) {
 	var eredm1 = binToString(generalt);
 	var eredm2 = binToString(eredmeny);
 	return [eredm1,eredm2]
-} 
+} */
 function createDecoded(event) {
-    //koordinalja a kikódolast
+    //koordinalja a kikÃ³dolast
     //console.log("kikodol eleje")
     $("body").addClass("load");
 	setTimeout(
