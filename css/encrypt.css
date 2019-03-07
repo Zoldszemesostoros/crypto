@@ -20,6 +20,7 @@ header {
 .text {
     display: inline;
     vertical-align: bottom;
+    grid-area: szoveg;
 }
 textarea {
     width: 97%;
@@ -33,12 +34,10 @@ textarea#text3 {
     width: 94%;
     height: 50ex;
 }
-
-header img {
+header > img { 
+    grid-area: logo;
     height: 128px;
 }
-header > img { grid-area: logo; }
-text { grid-area: szoveg; }
 header {
   display: grid;
   grid-template-areas:'logo szoveg';
