@@ -1,3 +1,80 @@
+function rn(szam) {
+	if (szam == 0 ) return 0
+	v = Math.random()
+	eredm = ((Math.round(v*100000))) % szam
+	return eredm
+}
+function textToArray(txt) {
+	var length = txt.length;
+	var result = [];
+	for(var i=0;i<length;i++) {
+		result.push(txt.charCodeAt(i));
+	}
+	return result;
+}
+function arrayToText(numArr) {
+	var length = numArr.length;
+	var result = "";
+	for(var i=0;i<length;i++) {
+		result += String.fromCharCode(numArr[i]);
+	}
+	return result;
+}
+function xorwithallArr(arr1,arr2){
+	var length = arr1.length;
+	if(arr2.length!=length) return;
+	var result = [];
+	for(var i=0;i<length;i++) {
+		result.push(arr1[i] ^ arr2[1]);
+	}
+	return result;
+}
+function randombitArr(length) {
+	var result = [];
+	for(var i=0;i<length;i++) {
+		result.push(rn(255));
+	}
+	return result;
+}
+function createDecodedArr(event) {
+    //koordinalja a kikódolast
+    //console.log("kikodol eleje")
+    $("body").addClass("load");
+	setTimeout(
+        function() {
+            var first = $("#text1")[0].value;
+            var second = $("#text2")[0].value;
+            first = textToArray(first);
+            second = textToArray(second);
+            var joined = xorwithallArr(first, second);
+            var result = arrayToText(joined);
+            $("#text3")[0].value = result;
+            //console.log("egyik : " + egyik)
+            //console.log("masik : " + masik)
+            //console.log("osszesitett : " + osszesitett)
+            //console.log("eredmeny : " + eredmeny)
+            //console.log("kikodol vege")
+            $("body").removeClass("load");
+        }, 0);
+}
+
+function createEncryptedArr(event) {
+//koordinalja a titkositast
+//console.log("letrehoz_titkositott eleje")
+	$("body").addClass("load");
+	var notEncryptedTxt = $("#text3").val();
+	console.log(notEncryptedTxt)
+	var notEncrypted = textToArray(notEncryptedTxt);
+	var generated = randombitArr(notEncrypted.length);
+	var result = xorwithallArr(notEncrypted, generated);
+	$("#text1")[0].value = textToArray(generated);
+	$("#text2")[0].value = textToArray(result);
+	//console.log("titkositando : " + titkositando)
+	//console.log("generalt : " + generalt)
+	//console.log("eredmeny : " + eredmeny)
+	//console.log("letrehoz_titkositott vege")
+	$("body").removeClass("load");
+}
 function randombit(length) {
     //szam valtozó hosszusagu 0-1 kombinaciókat csinal veletlenszeruen.
     //pl a randombit(3) eredmenye lehet "000" , "011" stb
@@ -81,7 +158,6 @@ function binTo64(mit) {
     }
     return btoa(eredm);
 }
-
 function binFrom64(mit) {
     //fejlesztes alatt
     eredm = String.fromCharCode(parseInt(mit.substring(0,8),2))
